@@ -1,0 +1,185 @@
+<main>
+
+  <section class="slider-area ">
+    <div class="future-blobs">
+      <div class="blob_4">
+        <img src="assets/img/elements/Ellipse 9.svg" alt="Image">
+      </div>
+      <div class="blob_3">
+        <img src="assets/img/elements/Ellipse 10.svg" alt="Image">
+      </div>
+      <div class="blob_2">
+        <img src="assets/img/elements/Ellipse 11.svg" alt="Image">
+      </div>
+      <div class="blob_1">
+        <img src="assets/img/elements/Ellipse 8.svg" alt="Image">
+      </div>
+      <div class="blob_0">
+        <img src="assets/img/elements/Repeat Grid 2.svg" alt="Image">
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-12">
+          <div class="hero__logo">
+            <a href="index.html"><img src="assets/img/logo/logo.svg" width="150" alt=""></a>
+          </div>
+          <div *ngIf="data != false" class="row align-items-center">
+
+            <div class="col-lg-12">
+
+              <div class="form-box form-content mt-40 mb-40">
+                <h2>User Data</h2>
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">First Name</th>
+                      <th scope="col">Last Name</th>
+                      <th scope="col">Working Email</th>
+                      <th scope="col">Monthly Adertising Budget</th>
+                      <th scope="col">Phone Number</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let data of userData; let i = index ">
+                      <th scope="row">{{i+1}}</th>
+                      <td>{{data.firstName}}</td>
+                      <td>{{data.lastName}}</td>
+                      <td>{{data.email}}</td>
+                      <td>{{data.monthlyAdvertisingBudget}}</td>
+                      <td>{{data.phone.internationalNumber}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div class="form-button">
+                  <a [routerLink]="['/home']">
+                    <button class="w100 ibtn">Start Free Trial</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="data == false" class="row align-items-center">
+            <div class="col-lg-6 mb-4">
+              <div class="hero__caption">
+                <h1 data-aos="fade-up" data-aos-delay="100">Book a demo today and <br> get two weeks for <span
+                    style="color: #38CCF5;"> free.</span> Why?</h1>
+                <p class="mb-4" data-aos="fade-up" data-aos-delay="200">Because Our AI-Powered Software <br> Will Exceed
+                  Your Marketing Goals.</p>
+
+                <div data-aos="fade-right" data-aos-delay="300" class="screen-img d-none d-lg-block">
+                  <img src="assets/img/elements/Artboard 1.png" alt="" class=" w-100 gadgets">
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="400">
+              <div class="form-box form-content">
+
+                <h3 class="h4 text-black mb-4">Let's Start</h3>
+                <p class="text-sub">Fill out the form and we'll get in touch to get your trial set up.</p>
+
+                <form (submit)="next()" [formGroup]="optionForm">
+                  <div class="radio-label">
+                    <p>Do you want to make ads that convert?</p>
+                  </div>
+                  <div class="radio-form">
+                    <div class="custom-control custom-radio w-100">
+                      <input type="radio" class="custom-control-input" value="yes" formControlName="option"
+                        id="customRadios1">
+                      <label class="custom-control-label" for="customRadios1">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="custom-control custom-radio w-100">
+                      <input type="radio" class="custom-control-input" value="no" formControlName="option"
+                        id="customRadios2">
+                      <label class="custom-control-label" for="customRadios2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+
+
+                  <div class="form-group mt-20">
+                    <label for="adBudget" class="form-adjust">What's your monthly ad budget?</label>
+                    <select class="form-control" id="adBudget" name="budget" formControlName="adBudget">
+                      <option selected="true">Select</option>
+                      <option *ngFor="let budget of budgets" [value]="budget?.id">
+                        {{budget.amount|currency:"$"}}
+                      </option>
+                    </select>
+                  </div>
+                  <div class="form-button">
+                    <a [routerLink]="['/home']">
+                      <button class="ibtn">Get Started</button>
+                    </a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="offer-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div data-aos="fade-up" data-aos-delay="400" class="offer-text">
+            <h4>Our Offer: Intelligent Automation. Real-time Insights. Unparalleled Results.</h4>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="benefit-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6">
+          <div data-aos="fade-right" data-aos-delay="500" class="benefit-text">
+            <h4>The <span style="color: #38CCF5;">Benefits</span> of using Filed</h4>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <div class="benefit-list">
+            <ul class="benefit-vertical-list">
+              <li data-aos="fade-left" data-aos-delay="550">
+                <div class="row">
+                  <div class="col-md-1"><i class="fa fa-check" aria-hidden="true"></i></div>
+                  <div class="col-md-11">Ability to scale using Dexter, our AI-powered marketing genius.</div>
+                </div>
+              </li>
+
+              <li data-aos="fade-left" data-aos-delay="600">
+                <div class="row">
+                  <div class="col-md-1"> <i class="fa fa-check" aria-hidden="true"></i> </div>
+                  <div class="col-md-11">Client Success Manager who will optimize your Facebook ad campaigns and focus
+                    on driving the best possible results for you.</div>
+                </div>
+              </li>
+
+              <li data-aos="fade-left" data-aos-delay="650">
+                <div class="row">
+                  <div class="col-md-1"><i class="fa fa-check" aria-hidden="true"></i></div>
+                  <div class="col-md-11">This is a limited time offer only.</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+</main>
