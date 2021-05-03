@@ -28,7 +28,7 @@ import { ToastrModule } from 'ngx-toastr';
     NgxIntlTelInputModule,
     StoreModule.forFeature(userFeatureKey, reducer),
   ],
-  // exports: [UserAddComponent, UserDataComponent],
+
   providers: [],
 })
 export class UserModule {}
