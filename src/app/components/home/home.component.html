@@ -43,7 +43,7 @@
             <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="400">
               <div class="form-box form-content">
                 <h3 class="h4 text-black mb-4">We’ll be in touch to get your trial set up.</h3>
-                <p class="text-sub">Fill Out Form</p>
+                <p class="text-sub">Fill the Form Below</p>
 
                 <form #f="ngForm" class="payment-input" (submit)="create()" [formGroup]="dataForm">
                   <div class="form-group mb-4">
@@ -76,7 +76,7 @@
                   </div>
                   <div class="form-group mb-4">
                     <input class="form-control" type="number" formControlName="monthlyAdvertisingBudget"
-                      name="monthlyAdvertisingBudget" placeholder="Monthly Advertising Budget *" required>
+                      name="monthlyAdvertisingBudget" placeholder="Monthly Advertising Budget in $ *" required>
                     <span class="text-danger"
                       *ngIf="(dataFormControl.monthlyAdvertisingBudget.touched || submitted) && dataFormControl.monthlyAdvertisingBudget.errors?.required">
                       Budget is required
